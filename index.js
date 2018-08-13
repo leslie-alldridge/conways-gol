@@ -6,16 +6,26 @@ const displayBoard = require('./displayBoard')
 
 let size = 0;
 const framesPerSecond = 15
-
+let growth = 0;
+let cellWidth = 0;
 
 function vars(){
 size = document.getElementById("sizeField").value
 board = createBoard(document.getElementById("sizeField").value)
+growth = document.getElementById("growthField").value
+cellWidth = document.getElementById("pixelField").value
 }
 
 let startBtn = document.getElementById("startBtn");
 let clearBtn = document.getElementById("clearBtn");
 let sizeField = document.getElementById("sizeField");
+let growthBtn = document.getElementById("growthBtn");
+let pixelBtn = document.getElementById("pixelBtn");
+let pixelField = document.getElementById("pixelField");
+
+if(growthBtn){
+  growthBtn.onclick = growCells
+}
 
 if(startBtn){
   startBtn.onclick = growCells;
@@ -24,14 +34,16 @@ if(startBtn){
 if(clearBtn){
     clearBtn.onclick = clearGrid;
 }
-if(sizeField){
-  //sizeField.oninput = growCells;
+if(pixelBtn){
+  pixelBtn.onclick = clearGrid;
+  
 }
 
 function growCells(){
+  vars();
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board.length; j++) {
-      board[i][j] = (Math.random() >= 0.45)
+      board[i][j] = (Math.random() >= growth)
     }
   }
 }
@@ -43,15 +55,15 @@ function drawGrid() {
   for(var i = 0; i < size; i++) {
     for(var j = 0; j< size; j++) {
         var div = document.createElement("div");
-        let boxSize = 16;
+        let cellWidth = pixelField.value;
         div.id = "r" + i + "c" + j;
-        div.style.width = boxSize + "px";
-        div.style.height = boxSize + "px";
+        div.style.width = cellWidth + "px";
+        div.style.height = cellWidth + "px";
         div.style.background = "black";
         div.style.border = "solid";
         div.style.borderWidth = "1px"
         div.style.borderColor = "black"
-        let width = ((boxSize * size) + (size * 2))  + "px";
+        let width = ((cellWidth * size) + (size * 2))  + "px";
         document.getElementById("container").style.width = width;
         document.getElementById("container").appendChild(div);
     }

@@ -8,12 +8,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="heading">
     <h1>Conways Game Of Life</h1>
+    </div>
+    <div id = "wrapper">
     <div id="container">
     </div>
+    </div>
+    <div id = "buttons">
     <button id="startBtn">Start</button>
     <input type="text" id="sizeField" placeholder="25" value="25" />
     <button id="clearBtn">Set</button>
+
+    <input type="text" id="growthField" placeholder="0.45" value="0.45" />
+    <button id="growthBtn">Set G</button>
+
+    <input type="text" id="pixelField" placeholder="16" value="16" />
+    <button id="pixelBtn">Set Pixel</button>
+    </div>    
     <script src="bundle.js"></script>
 </body>
 </html>
