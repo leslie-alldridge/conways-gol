@@ -1,0 +1,26 @@
+{
+  "name": "conways",
+  "version": "0.3.0",
+  "description": "Conways game of life",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-academy-challenges/conways.git"
+  },
+  "author": "EDA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev-academy-challenges/conways/issues"
+  },
+  "homepage": "https://github.com/dev-academy-challenges/conways#readme",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  },
+  "dependencies": {
+    "browserify": "^16.2.2",
+    "uniq": "^1.0.1"
+  }
+}
